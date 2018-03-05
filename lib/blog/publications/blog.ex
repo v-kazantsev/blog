@@ -8,6 +8,8 @@ defmodule Blog.Publications.Blog do
     field :source, :string
     field :subtitle, :string
     field :title, :string
+    field :category, :string
+    field :status, :integer
 
     timestamps()
   end
