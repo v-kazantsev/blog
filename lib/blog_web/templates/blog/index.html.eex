@@ -1,32 +1,42 @@
-<h2>Listing Blogs</h2>
+<ul>
+  <%= for blog <- @blogs do %>
+    <li>
+      <div class="card hoverable medium grey lighten-5">
+        <div class="card-title blog-title center">
+         <h5><%= blog.title %></h5>
+        </div>
+        <div class="row valign-wrapper">
+          <div class="col m9">
+             <div class="card-title blog-subtitle center grey-text text-darken-1">
+               <i><%= blog.subtitle %></i>
+             </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Source</th>
-      <th>Body</th>
+             <div class="card-content">
+              <%= blog.body %>
+             </div>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for blog <- @blogs do %>
-    <tr>
-      <td><%= blog.title %></td>
-      <td><%= blog.subtitle %></td>
-      <td><%= blog.source %></td>
-      <td><%= blog.body %></td>
+             <div class="card-action">
+               <i class="material-icons">subject</i>
+               Читать полностью
+             </div>
 
-      <td class="text-right">
-        <span><%= link "Show", to: blog_path(@conn, :show, blog), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: blog_path(@conn, :edit, blog), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: blog_path(@conn, :delete, blog), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+           </div><!--Закрыли col-->
 
-<span><%= link "New Blog", to: blog_path(@conn, :new) %></span>
+           <div class="col m3">
+             <div class="card-content card-source valign center">
+               <%= "Добавлено #{blog.inserted_at.day}-#{blog.inserted_at.month}-#{blog.inserted_at.year}" %>
+               <p>Оригинал статьи находится
+               <%= link " здесь", to: "#{blog.source}", target: "_blank" %></p>
+             </div>
+          </div><!--Закрыли col-->
+        </div><!--Закрыли row-->
+      </div><!--Закрыли card-->
+
+    </li>
+  <% end %>
+</ul>
+<div class="fixed-action-button">
+  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light purple" do %>
+  <i class="material-icons">add</i>
+  <% end %>
+</div>

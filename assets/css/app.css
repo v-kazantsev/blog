@@ -1,1 +1,28 @@
 /* This file is for your main application css. */
+.card-action {
+  font-size: large;
+  background-color: #F1E0D6 !important;
+}
+
+.card-source {
+  margin-right: 25px;
+  background-color: #BF988F;
+  font-size: medium;
+}
+
+.card-content.card-source a:link, a:visited, a:hover {
+  color: #F1E0D6;
+}
+
+.blog-title {
+  padding: 10px;
+  background-color: #F1E0D6;
+}
+nav.navbar-fixed {
+  color: #BE9063;
+  background: #F1E0D6;
+  height: 70px;
+}
+.blog-subtitle {
+  margin-top: 10px;
+}

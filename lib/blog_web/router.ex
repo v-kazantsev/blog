@@ -15,9 +15,8 @@ defmodule BlogWeb.Router do
 
   scope "/", BlogWeb do
     pipe_through :browser # Use the default browser stack
-
     get "/", BlogController, :index
-    resources "/blogs", BlogController
+    resources "/blogs", BlogController, except: [:index]
   end
 
   # Other scopes may use custom stacks.
