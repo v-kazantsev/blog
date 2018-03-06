@@ -22,8 +22,12 @@
 nav.navbar-fixed {
   color: #BE9063;
   background: #F1E0D6;
-  height: 70px;
+  height: 80px;
 }
 .blog-subtitle {
   margin-top: 10px;
+}
+.category {
+  margin-left: 25px;
+  font-size: large;
 }

@@ -12,8 +12,10 @@
 
   <body>
     <nav class="navbar-fixed hoverable">
-      <div class="nav-wrapper container">
+      <div class="nav-wrapper container class="brand-logo"">
+        <!-- <a href="/"> -->
         <h4>Yet Another Blog</h4>
+      <!-- </a> -->
       </div>
     </nav>
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -27,5 +29,6 @@
 
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <span class="right page-home" style="display: inline-block">^</span>
   </body>
 </html>

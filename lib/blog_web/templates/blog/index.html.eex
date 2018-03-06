@@ -1,7 +1,7 @@
 <ul>
   <%= for blog <- @blogs do %>
     <li>
-      <div class="card hoverable medium grey lighten-5">
+      <div class="card hoverable medium brown lighten-5">
         <div class="card-title blog-title center">
          <h5><%= blog.title %></h5>
         </div>
@@ -24,7 +24,6 @@
 
            <div class="col m3">
              <div class="card-content card-source valign center">
-               <!-- <%= "Добавлено #{blog.inserted_at.day}-#{blog.inserted_at.month}-#{blog.inserted_at.year}" %> -->
                Добавлено <%= time_ago_in_words(blog.inserted_at) %>
                <p>Оригинал статьи находится
                <%= link " здесь", to: "#{blog.source}", target: "_blank" %></p>
