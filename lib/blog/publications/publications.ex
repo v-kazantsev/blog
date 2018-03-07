@@ -21,6 +21,10 @@ defmodule Blog.Publications do
     Repo.all(Blog)
   end
 
+  def sort_by_created(params) do
+    Blog |> order_by(desc: :inserted_at) |> Repo.paginate(params)
+  end
+
   @doc """
   Gets a single blog.
 

@@ -22,6 +22,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :scrivener_html,
+    routes_helper: BlogWeb.Router.Helpers,
+    # If you use a single view style everywhere, you can configure it here. See View Styles below for more info.
+    view_style: :foundation
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

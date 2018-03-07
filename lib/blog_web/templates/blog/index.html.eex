@@ -35,6 +35,9 @@
     </li>
   <% end %>
 </ul>
+<div class="col s12 center-align">
+  <%= pagination_links @conn, @page %>
+</div>
 <div class="fixed-action-button">
   <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light purple" do %>
   <i class="material-icons">add</i>

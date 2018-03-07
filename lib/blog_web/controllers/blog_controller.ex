@@ -4,9 +4,9 @@ defmodule BlogWeb.BlogController do
   alias Blog.Publications
   alias Blog.Publications.Blog
 
-  def index(conn, _params) do
-    blogs = Publications.list_blogs()
-    render(conn, "index.html", blogs: blogs)
+  def index(conn, params) do
+    page = Publications.sort_by_created(params)
+    render(conn, "index.html", blogs: page.entries, page: page)
   end
 
   def new(conn, _params) do

@@ -11,7 +11,7 @@
   font-size: medium;
 }
 
-.card-content.card-source a:link, a:visited, a:hover {
+.card-content.card-source a {
   color: #F1E0D6;
 }
 
@@ -19,15 +19,22 @@
   padding: 10px;
   background-color: #F1E0D6;
 }
-nav.navbar-fixed {
+nav.navbar {
   color: #BE9063;
   background: #F1E0D6;
-  height: 80px;
+  height: 75px;
 }
+nav.navbar a {
+  color: #BE9063;
+}
+.brand-logo {
+  color: #BE9063 !important;
+}
+
 .blog-subtitle {
   margin-top: 10px;
 }
-.category {
-  margin-left: 25px;
+#category {
+  margin-right: 25px;
   font-size: large;
 }
