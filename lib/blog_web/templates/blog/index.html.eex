@@ -12,7 +12,7 @@
              </div>
 
              <div class="card-content">
-              <%= blog.body %>
+              <%= truncate(blog.body, max_length: 1000) %>
              </div>
 
              <div class="card-action">
