@@ -20,7 +20,11 @@ defmodule Blog.Mixfile do
   def application do
     [
       mod: {Blog.Application, []},
-      extra_applications: [:logger, :runtime_tools, :scrivener_ecto, :scrivener_html]
+      extra_applications: [:logger,
+                           :runtime_tools,
+                           :scrivener_ecto,
+                           :scrivener_html,
+                           :comeonin]
     ]
   end
 
@@ -43,7 +47,9 @@ defmodule Blog.Mixfile do
       {:cowboy, "~> 1.0"},
       {:timex, "~> 3.1"},
       {:scrivener_ecto, "~> 1.0"},
-      {:scrivener_html, "~> 1.7"}
+      {:scrivener_html, "~> 1.7"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0.6"}
     ]
   end
 

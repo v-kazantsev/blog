@@ -1,5 +1,9 @@
-<h2>Edit Blog</h2>
+<h4>Редактировать</h4>
 
 <%= render "form.html", Map.put(assigns, :action, blog_path(@conn, :update, @blog)) %>
 
-<span><%= link "Back", to: blog_path(@conn, :index) %></span>
+<span>
+  <%= link to: blog_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
+  <i class="material-icons">directions_run</i>
+  <% end %>
+</span>

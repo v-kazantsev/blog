@@ -1,8 +1,8 @@
 <ul>
   <%= for blog <- @blogs do %>
     <li>
-      <div class="card hoverable medium brown lighten-5">
-        <div class="card-title blog-title center">
+      <div class="card hoverable medium">
+        <div class="card-title blog-title lime-text text-lighten-1 center">
          <h5><%= blog.title %></h5>
         </div>
         <div class="row valign-wrapper">
@@ -15,9 +15,9 @@
               <%= truncate(blog.body, max_length: 1000) %>
              </div>
 
-             <div class="card-action">
+             <div class="card-action lime-text text-lighten-1">
                <i class="material-icons">subject</i>
-               Читать полностью
+               <%= link "Читать полностью", to: blog_path(@conn, :show, blog), class: "lime-text text-lighten-1" %>
              </div>
 
            </div><!--Закрыли col-->
@@ -39,7 +39,7 @@
   <%= pagination_links @conn, @page %>
 </div>
 <div class="fixed-action-button">
-  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light purple" do %>
+  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
   <i class="material-icons">add</i>
   <% end %>
 </div>

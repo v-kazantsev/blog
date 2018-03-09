@@ -4,32 +4,38 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
-
-  <div class="form-group">
-    <%= label f, :title, class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
-    <%= error_tag f, :title %>
+  <div class="row" style="margin-bottom: 0">
+    <div class="form-group col s6">
+      <%= label f, :"название", class: "control-label" %>
+      <%= text_input f, :title, class: "form-control", autofocus: true %>
+      <%= error_tag f, :title %>
+    </div>
+    <div class="form-group col s6">
+      <%= label f, :"катагория", class: "control-label" %>
+      <%= text_input f, :category, class: "form-control" %>
+      <%= error_tag f, :category %>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= label f, :subtitle, class: "control-label" %>
+    <%= label f, :"подзаголовок", class: "control-label" %>
     <%= text_input f, :subtitle, class: "form-control" %>
     <%= error_tag f, :subtitle %>
   </div>
 
   <div class="form-group">
-    <%= label f, :source, class: "control-label" %>
+    <%= label f, :"источник", class: "control-label" %>
     <%= text_input f, :source, class: "form-control" %>
     <%= error_tag f, :source %>
   </div>
 
   <div class="form-group">
-    <%= label f, :body, class: "control-label" %>
-    <%= textarea f, :body, class: "form-control" %>
+    <%= label f, :"содержание", class: "control-label" %>
+    <%= textarea f, :body, class: "form-control", rows: 25 %>
     <%= error_tag f, :body %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Создать", class: "btn btn-primary purple darken-4 hoverable" %>
   </div>
 <% end %>

@@ -1,0 +1,6 @@
+<h4>Список пользователей</h4>
+<ul>
+  <%= for user <- @users do %>
+    <li><%= user.id %> <%= user.email %></li>
+  <% end %>
+</ul>

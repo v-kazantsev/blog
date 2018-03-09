@@ -1,34 +1,59 @@
 /* This file is for your main application css. */
+.card {
+  background-color: #F4F3F4 !important;
+}
+
 .card-action {
-  font-size: large;
-  background-color: #F1E0D6 !important;
+  /* font-size: large; */
+  /* background-color: #F1E0D6 !important; */
+  /* background-color: #D4DCA9 !important; */
+  background-color: #A882C1 !important;
+}
+
+.card-action a {
+  /* color: black !important; */
+  /* color: #BF9D7A !important; */
 }
 
 .card-source {
   margin-right: 25px;
-  background-color: #BF988F;
-  color: white;
+  /* background-color: #BF988F; */
+  /* background-color: #0ABDA0; */
+  background-color: #B9C406;
+  color: #F4F3F4;
   font-size: medium;
 }
 
 .card-content.card-source a {
-  color: #F1E0D6;
+  color: #824CA7;
+  /* color: #D4DCA9; */
+  /* color: #F1E0D6; */
 }
 
 .blog-title {
   padding: 10px;
-  background-color: #F1E0D6;
+  /* color: #B9C406; */
+  /* background-color: #F1E0D6; */
+  /* background-color: #D4DCA9; */
+  background-color: #A882C1;
 }
 nav.navbar {
-  color: #BE9063;
-  background: #F1E0D6;
+  /* color: #BE9063; */
+  /* color: #BF9D7A; */
+  color: #B9C406;
+  /* background-color: #D4DCA9 !important; */
+  background-color: #824CA7 !important;
+  /* background: #F1E0D6; */
   height: 75px;
 }
 nav.navbar a {
-  color: #BE9063;
+  /* color: #BE9063; */
+  color: #B9C406;
+  height: 75px;
 }
 .brand-logo {
-  color: #BE9063 !important;
+  /* color: #BE9063 !important; */
+  color: #B9C406 !important;
 }
 
 .blog-subtitle {

@@ -7,18 +7,18 @@ defmodule Blog.Publications.Helpers do
     distance_in_days = (from_time - to_time) / 86400
     |> round
     case distance_in_days do
-      n when n < 1 ->
+      0 ->
         "меньше суток назад"
       1 ->
         "вчера"
       2 ->
         "позавчера"
-      {3, 4, 22, 23, 24} ->
+      n when n in [3, 4, 22, 23, 24] ->
         "#{distance_in_days} дня назад"
-      {5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29} ->
+      n when n in [5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29] ->
         "#{distance_in_days} дней назад"
       21 ->
-        "#{distance_in_days} день назад"
+        "21 день назад"
       30 ->
         "месяц назад"
       7 ->

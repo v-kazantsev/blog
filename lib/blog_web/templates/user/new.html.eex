@@ -1,0 +1,9 @@
+<h4>Новый пользователь</h4>
+
+<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
+
+<span>
+  <%= link to: user_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
+  <i class="material-icons">directions_run</i>
+  <% end %>
+</span>

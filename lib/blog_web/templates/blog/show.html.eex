@@ -1,28 +1,20 @@
-<h2>Show Blog</h2>
+<h3><%= @blog.title %></h3>
 
 <ul>
 
   <li>
-    <strong>Title:</strong>
-    <%= @blog.title %>
-  </li>
-
-  <li>
-    <strong>Subtitle:</strong>
-    <%= @blog.subtitle %>
-  </li>
-
-  <li>
-    <strong>Source:</strong>
-    <%= @blog.source %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
     <%= @blog.body %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: blog_path(@conn, :edit, @blog) %></span>
-<span><%= link "Back", to: blog_path(@conn, :index) %></span>
+<span>
+  <%= link to: blog_path(@conn, :edit, @blog), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
+    <i class="material-icons">edit</i>
+    <% end %>
+</span>
+<span class="right">
+  <%= link to: blog_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
+  <i class="material-icons">directions_run</i>
+  <% end %>
+</span>
