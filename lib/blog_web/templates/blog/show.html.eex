@@ -9,12 +9,12 @@
 </ul>
 
 <span>
-  <%= link to: blog_path(@conn, :edit, @blog), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
-    <i class="material-icons">edit</i>
+  <%= link to: blog_path(@conn, :edit, @blog), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
+    <i class="material-icons lime-text">edit</i>
     <% end %>
 </span>
 <span class="right">
-  <%= link to: blog_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
-  <i class="material-icons">directions_run</i>
+  <%= link to: blog_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
+  <i class="material-icons lime-text">directions_run</i>
   <% end %>
 </span>

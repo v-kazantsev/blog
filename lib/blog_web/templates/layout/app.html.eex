@@ -23,11 +23,17 @@
 
       </div>
     </nav>
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
     <main role="main">
+      <div class="exit-btn right">
+        <%= if @conn.assigns[:admin] do %>
+          <%= link to: session_path(@conn, :delete), class: "btn-floating hoverable btn-large waves-effect waves-light red" do %>
+          <i class="material-icons">exit_to_app</i>
+          <% end %>
+        <% end %>
+      </div>
       <div class="container">
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
         <%= render @view_module, @view_template, assigns %>
       </div>
     </main>

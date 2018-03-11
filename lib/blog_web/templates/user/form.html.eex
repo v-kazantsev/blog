@@ -22,6 +22,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Создать", class: "btn btn-primary purple darken-4 hoverable" %>
+    <%= submit "Создать", class: "btn btn-primary deep-purple lighten-2 hoverable" %>
   </div>
 <% end %>

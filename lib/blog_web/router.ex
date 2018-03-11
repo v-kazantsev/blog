@@ -7,6 +7,7 @@ defmodule BlogWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug BlogWeb.Plugs.SetUser
   end
 
   pipeline :api do
@@ -16,7 +17,10 @@ defmodule BlogWeb.Router do
   scope "/", BlogWeb do
     pipe_through :browser # Use the default browser stack
     get "/", BlogController, :index
-    resources "/blogs", BlogController, except: [:index]
+    get "/iriguchi", SessionController, :new
+    post "/iriguchi", SessionController, :create
+    get "/logout", SessionController, :delete
+    resources "/blogs", BlogController#, except: [:index]
     resources "/users", UserController, only: [:index, :show, :new, :create]
   end
 

@@ -101,4 +101,18 @@ defmodule Blog.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def get_user_by_email(email) do
+    Repo.get_by(User, email: email)
+  end
+
+  def get_admin(%{"email" => email, "password" => pass}) do
+    admin = get_user_by_email(email)
+    cond do
+      admin && Comeonin.Bcrypt.checkpw(pass, admin.password_hash) ->
+        admin
+      true ->
+        :error
+    end
+  end
 end

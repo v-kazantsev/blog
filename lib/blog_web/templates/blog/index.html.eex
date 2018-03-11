@@ -26,7 +26,7 @@
              <div class="card-content card-source valign center">
                Добавлено <%= time_ago_in_words(blog.inserted_at) %>
                <p>Оригинал статьи находится
-               <%= link " здесь", to: "#{blog.source}", target: "_blank" %></p>
+               <i><%= link " здесь", to: "#{blog.source}", target: "_blank" %></i></p>
              </div>
           </div><!--Закрыли col-->
         </div><!--Закрыли row-->
@@ -39,7 +39,7 @@
   <%= pagination_links @conn, @page %>
 </div>
 <div class="fixed-action-button">
-  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light brown lighten-2" do %>
-  <i class="material-icons">add</i>
+  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
+  <i class="material-icons lime-text">add</i>
   <% end %>
 </div>
