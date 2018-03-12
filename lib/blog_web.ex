@@ -40,6 +40,7 @@ defmodule BlogWeb do
       import BlogWeb.Router.Helpers
       import BlogWeb.ErrorHelpers
       import BlogWeb.Gettext
+      import BlogWeb.Helpers
     end
   end
 

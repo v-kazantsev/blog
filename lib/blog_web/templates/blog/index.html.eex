@@ -18,6 +18,13 @@
              <div class="card-action lime-text text-lighten-1">
                <i class="material-icons">subject</i>
                <%= link "Читать полностью", to: blog_path(@conn, :show, blog), class: "lime-text text-lighten-1" %>
+               <%= if admin?(@conn) do %>
+               <span class="right">
+                 <%= link to: blog_path(@conn, :edit, blog), class: "btn-floating waves-effect waves-light red" do %>
+                   <i class="material-icons">edit</i>
+                   <% end %>
+               </span>
+               <% end %>
              </div>
 
            </div><!--Закрыли col-->
@@ -38,8 +45,10 @@
 <div class="col s12 center-align">
   <%= pagination_links @conn, @page %>
 </div>
+<%= if admin?(@conn) do %>
 <div class="fixed-action-button">
-  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
-  <i class="material-icons lime-text">add</i>
+  <%= link to: blog_path(@conn, :new), class: "btn-floating hoverable btn-large waves-effect waves-light red" do %>
+  <i class="material-icons">add</i>
   <% end %>
 </div>
+<% end %>

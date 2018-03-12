@@ -1,4 +1,4 @@
-defmodule Blog.Publications.Helpers do
+defmodule BlogWeb.Helpers do
   use Timex
 
   def time_ago_in_words(time, time_now \\ Timex.now) do
@@ -45,5 +45,10 @@ defmodule Blog.Publications.Helpers do
         "#{String.slice(text, 0, length_with_omission)}#{omission}"
     end
   end
+
+  def admin?(conn) do
+    conn.assigns[:admin] != nil
+  end
+
 
 end

@@ -4,6 +4,8 @@ defmodule BlogWeb.BlogController do
   alias Blog.Publications
   alias Blog.Publications.Blog
 
+  plug BlogWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
+
   def index(conn, params) do
     page = Publications.sort_by_created(params)
     render(conn, "index.html", blogs: page.entries, page: page)

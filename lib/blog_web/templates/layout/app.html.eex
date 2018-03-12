@@ -12,6 +12,13 @@
 
   <body>
     <nav class="navbar hoverable">
+      <span class="exit-btn right">
+        <%= if admin?(@conn) do %>
+        <%= link to: session_path(@conn, :delete), class: "btn-floating hoverable btn-large waves-effect waves-light red" do %>
+          <i class="material-icons">exit_to_app</i>
+        <% end %>
+        <% end %>
+      </span>
       <div class="nav-wrapper container">
         <span class="brand-logo">Yet Another Blog</span>
         <ul class="right hide-on-med-and-down">
@@ -20,17 +27,10 @@
           <li><a href="badges.html">Elixir/Phoenix</a></li>
           <li><a href="collapsible.html">Показать все</a></li>
         </ul>
-
       </div>
+
     </nav>
     <main role="main">
-      <div class="exit-btn right">
-        <%= if @conn.assigns[:admin] do %>
-          <%= link to: session_path(@conn, :delete), class: "btn-floating hoverable btn-large waves-effect waves-light red" do %>
-          <i class="material-icons">exit_to_app</i>
-          <% end %>
-        <% end %>
-      </div>
       <div class="container">
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -38,8 +38,6 @@
       </div>
     </main>
 
-
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <span class="right page-home" style="display: inline-block">^</span>
   </body>
 </html>

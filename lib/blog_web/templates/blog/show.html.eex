@@ -7,12 +7,13 @@
   </li>
 
 </ul>
-
+<%= if admin?(@conn) do %>
 <span>
   <%= link to: blog_path(@conn, :edit, @blog), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
     <i class="material-icons lime-text">edit</i>
     <% end %>
 </span>
+<% end %>
 <span class="right">
   <%= link to: blog_path(@conn, :index), class: "btn-floating hoverable btn-large waves-effect waves-light deep-purple lighten-2" do %>
   <i class="material-icons lime-text">directions_run</i>
