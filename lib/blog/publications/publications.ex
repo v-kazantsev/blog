@@ -17,12 +17,21 @@ defmodule Blog.Publications do
       [%Blog{}, ...]
 
   """
-  def list_blogs do
-    Repo.all(Blog)
+  # def list_blogs do
+  #   Repo.all(Blog)
+  # end
+
+  def list_for_admin(params) do
+    Blog
+    |> order_by(desc: :inserted_at)
+    |> Repo.paginate(params)
   end
 
   def sort_by_created(params) do
-    Blog |> order_by(desc: :inserted_at) |> Repo.paginate(params)
+    Blog
+    |> where(status: 1)
+    |> order_by(desc: :inserted_at)
+    |> Repo.paginate(params)
   end
 
   @doc """

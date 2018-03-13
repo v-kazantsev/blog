@@ -7,8 +7,12 @@ defmodule BlogWeb.BlogController do
   plug BlogWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
 
   def index(conn, params) do
-    page = Publications.sort_by_created(params)
-    render(conn, "index.html", blogs: page.entries, page: page)
+    if conn.assigns[:admin] do
+      page = Publications.list_for_admin(params)
+    else
+      page = Publications.sort_by_created(params)
+    end
+      render(conn, "index.html", blogs: page.entries, page: page)
   end
 
   def new(conn, _params) do
@@ -20,7 +24,7 @@ defmodule BlogWeb.BlogController do
     case Publications.create_blog(blog_params) do
       {:ok, blog} ->
         conn
-        |> put_flash(:info, "Blog created successfully.")
+        |> put_flash(:info, "Запись создана.")
         |> redirect(to: blog_path(conn, :show, blog))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -44,7 +48,7 @@ defmodule BlogWeb.BlogController do
     case Publications.update_blog(blog, blog_params) do
       {:ok, blog} ->
         conn
-        |> put_flash(:info, "Blog updated successfully.")
+        |> put_flash(:info, "Запись отредактирована.")
         |> redirect(to: blog_path(conn, :show, blog))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", blog: blog, changeset: changeset)
@@ -56,7 +60,7 @@ defmodule BlogWeb.BlogController do
     {:ok, _blog} = Publications.delete_blog(blog)
 
     conn
-    |> put_flash(:info, "Blog deleted successfully.")
+    |> put_flash(:info, "Запись удалена.")
     |> redirect(to: blog_path(conn, :index))
   end
 end
