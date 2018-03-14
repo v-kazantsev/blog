@@ -49,7 +49,8 @@ defmodule Blog.Mixfile do
       {:scrivener_ecto, "~> 1.0"},
       {:scrivener_html, "~> 1.7"},
       {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0.6"}
+      {:bcrypt_elixir, "~> 1.0.6"},
+      {:earmark, "~> 1.2.4"}
     ]
   end
 

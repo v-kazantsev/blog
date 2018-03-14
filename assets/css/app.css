@@ -1,4 +1,8 @@
 /* This file is for your main application css. */
+.help-block {
+  color: red;
+  text-transform: capitalize;
+}
 .card {
   background-color: #F4F3F4 !important;
 }
@@ -65,4 +69,9 @@ nav.navbar a {
 }
 .exit-btn {
   margin-right: 50px;
+}
+.show-content{
+  padding: 50px 60px;
+  margin-bottom: 80px;
+  background-color: #F4F3F4
 }

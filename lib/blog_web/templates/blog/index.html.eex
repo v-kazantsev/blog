@@ -1,7 +1,7 @@
 <ul>
   <%= for blog <- @blogs do %>
     <li>
-      <div class="card hoverable medium">
+      <div class="card hoverable large">
         <div class="card-title blog-title lime-text text-lighten-1 center">
          <h5><%= blog.title %></h5>
         </div>
@@ -12,6 +12,7 @@
              </div>
 
              <div class="card-content">
+               <img src="<%= blog.image %>" height="100" width="100" align="left" vspace="5" hspace="15" />
               <%= truncate(blog.body, max_length: 1000) %>
              </div>
 
@@ -36,7 +37,7 @@
              <div class="card-content card-source valign center">
                Добавлено <%= time_ago_in_words(blog.inserted_at) %>
                <p>Оригинал статьи находится
-               <i><%= link " здесь", to: "#{blog.source}", target: "_blank" %></i></p>
+               <i><%= link "  здесь", to: "#{blog.source}", target: "_blank" %></i></p>
              </div>
           </div><!--Закрыли col-->
         </div><!--Закрыли row-->

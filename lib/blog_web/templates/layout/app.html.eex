@@ -20,13 +20,7 @@
         <% end %>
       </span>
       <div class="nav-wrapper container">
-        <span class="brand-logo">Yet Another Blog</span>
-        <ul class="right hide-on-med-and-down">
-          <li><span id="category">Категории:</span></li>
-          <li><a href="sass.html">Ruby on Rails</a></li>
-          <li><a href="badges.html">Elixir/Phoenix</a></li>
-          <li><a href="collapsible.html">Показать все</a></li>
-        </ul>
+        <span class="brand-logo center">Yet Another Blog</span>
       </div>
 
     </nav>

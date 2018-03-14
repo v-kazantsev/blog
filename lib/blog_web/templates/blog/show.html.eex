@@ -1,12 +1,9 @@
-<h3><%= @blog.title %></h3>
+<div class="col s12 z-depth-2 show-content">
+  <h3><%= @blog.title %></h3>
+  <%= @blog.body %>
+</div>
 
-<ul>
 
-  <li>
-    <%= @blog.body %>
-  </li>
-
-</ul>
 <%= if admin?(@conn) do %>
 <span>
   <%= link to: blog_path(@conn, :edit, @blog), class: "btn-floating hoverable btn-large waves-effect waves-light red" do %>
