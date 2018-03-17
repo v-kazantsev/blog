@@ -26,7 +26,7 @@ defmodule Blog.Publications.Blog do
     model
   end
   defp strip_unsafe_body(model, %{"body" => body}) do
-    {:safe, clean_body} = Phoenix.HTML.html_escape(body)
+    clean_body = Phoenix.HTML.Format.text_to_html(body, escape: false, insert_brs: false) |> Phoenix.HTML.safe_to_string
     model |> put_change(:body, clean_body)
   end
   defp strip_unsafe_body(model, _) do

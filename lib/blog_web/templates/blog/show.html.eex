@@ -1,6 +1,6 @@
 <div class="col s12 z-depth-2 show-content">
   <h3><%= @blog.title %></h3>
-  <%= @blog.body %>
+  <%= raw @blog.body %>
 </div>
 
 

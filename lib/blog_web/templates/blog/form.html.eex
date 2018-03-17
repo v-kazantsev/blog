@@ -50,6 +50,3 @@
     <%= submit "Создать", class: "btn btn-primary purple darken-4 hoverable" %>
   </div>
 <% end %>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-<script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script>var simplemde = new SimpleMDE();</script>
