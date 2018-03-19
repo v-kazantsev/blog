@@ -22,6 +22,12 @@
         <% end %>
       </span>
       <div class="nav-wrapper container">
+        <span class="right">
+          <i class="material-icons">email</i>
+        </span>
+        <span class="right">
+          <%= link "Обратная связь ", to: mail_path(@conn, :new) %>
+        </span>
         <span class="brand-logo center">Yet Another Blog</span>
       </div>
 

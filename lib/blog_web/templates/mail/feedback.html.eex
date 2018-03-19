@@ -1,0 +1,20 @@
+<h5>Замечания, просьбы, пожелания? Неточности перевода? Отправьте нам сообщение</h5>
+<%= form_for @conn, mail_path(@conn, :create), fn f -> %>
+  <div class="form-group">
+    <%= label f, :"имя", class: "control-label" %>
+    <%= text_input f, :from, class: "form-control", placeholder: "Необязательно" %>
+    <%= error_tag f, :title %>
+  </div>
+  <div class="form-group">
+    <%= label f, :"email", class: "control-label" %>
+    <%= text_input f, :email, class: "form-control", placeholder: "Если хотите получить ответ" %>
+    <%= error_tag f, :email %>
+  </div>
+  <div class="form-group">
+    <%= label f, :"сообщение", class: "control-label" %>
+    <%= textarea f, :message, rows: 10, class: "form-control" %>
+    <%= error_tag f, :message %>
+  </div>
+  <%= submit "Отправить", class: "btn btn-primary deep-purple lighten-1 lime-text" %>
+  <%= link "Отменить", to: blog_path(@conn, :index), class: "btn btn-primary deep-purple lighten-1 lime-text" %>
+<% end %>

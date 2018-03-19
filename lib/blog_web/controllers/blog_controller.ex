@@ -7,10 +7,11 @@ defmodule BlogWeb.BlogController do
   plug BlogWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
 
   def index(conn, params) do
-    if conn.assigns[:admin] do
-      page = Publications.list_for_admin(params)
-    else
-      page = Publications.sort_by_created(params)
+    page = case conn.assigns[:admin] do
+      true ->
+        Publications.list_for_admin(params)
+     _ ->
+        Publications.sort_by_created(params)
     end
       render(conn, "index.html", blogs: page.entries, page: page)
   end

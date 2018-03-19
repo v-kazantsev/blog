@@ -50,7 +50,9 @@ defmodule Blog.Mixfile do
       {:scrivener_html, "~> 1.7"},
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0.6"},
-      {:earmark, "~> 1.2.4"}
+      {:earmark, "~> 1.2.4"},
+      {:bamboo, "~> 0.8.0"},
+      {:bamboo_smtp, "~> 1.4.0"}
     ]
   end
 
