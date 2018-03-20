@@ -52,7 +52,9 @@ defmodule Blog.Mixfile do
       {:bcrypt_elixir, "~> 1.0.6"},
       {:earmark, "~> 1.2.4"},
       {:bamboo, "~> 0.8.0"},
-      {:bamboo_smtp, "~> 1.4.0"}
+      {:bamboo_smtp, "~> 1.4.0"},
+      {:edeliver, "~> 1.4.2"},
+      {:distillery, "~> 1.4"}
     ]
   end
 
