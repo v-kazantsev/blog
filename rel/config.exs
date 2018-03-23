@@ -31,6 +31,7 @@ environment :dev do
   set dev_mode: true
   set include_erts: false
   set cookie: :"G9/vU8@=&F4he41QVWBD[DOMcHme>dymqWObO(Le5j>]n=2bf;x17p|sbg}/`$AS"
+  set output_dir: "rel/blog"
 end
 
 environment :prod do

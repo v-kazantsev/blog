@@ -23,6 +23,8 @@ defmodule BlogWeb.Router do
     resources "/blogs", BlogController#, except: [:index]
     get "/feedback", MailController, :new
     post "/feedback", MailController, :create
+    get "/users/", UserController, :new
+    post "users/", UserController, :create
   end
 
   # Other scopes may use custom stacks.
