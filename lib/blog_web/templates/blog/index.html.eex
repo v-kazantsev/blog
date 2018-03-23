@@ -13,7 +13,7 @@
 
              <div class="card-content">
                <img src="<%= blog.image %>" height="100" width="100" align="left" vspace="5" hspace="15" />
-              <%= raw truncate(blog.body, max_length: 1000) %>
+               <%= raw truncate(blog.body, length: 900) %>
              </div>
 
              <div class="card-action lime-text text-lighten-1">

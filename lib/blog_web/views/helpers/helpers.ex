@@ -30,21 +30,40 @@ defmodule BlogWeb.Helpers do
     end
   end
 
-  def truncate(text, opts \\ []) do
-    max_length  = opts[:max_length] || 300
-    omission    = opts[:omission] || "..."
+  def truncate(text, options \\ []) do
+    len = options[:length] || 300
+    omi = options[:omission] || "..."
+    sep = options[:separator] || " "
 
     cond do
-      not String.valid?(text) ->
-        text
-      String.length(text) < max_length ->
-        text
+     !String.valid?(text)       -> text
+      String.length(text) < len -> text
       true ->
-        length_with_omission = max_length - String.length(omission)
-
-        "#{String.slice(text, 0, length_with_omission)}#{omission}"
+        len_with_omi = len - String.length(omi)
+        stop =  rindex(text, sep, len_with_omi) || len_with_omi
+        "#{String.slice(text, 0, stop)}#{omi}"
     end
   end
+
+  defp rindex(text, str, offset) do
+    text =
+      if offset do
+        String.slice(text, 0, offset)
+      else
+        text
+      end
+
+    revesed = text |> String.reverse
+    matchword = String.reverse(str)
+
+    case :binary.match(revesed, matchword) do
+      {at, strlen} ->
+        String.length(text) - at - strlen
+      :nomatch     ->
+        nil
+    end
+  end
+
 
   def admin?(conn) do
     conn.assigns[:admin] != nil

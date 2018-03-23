@@ -16,15 +16,9 @@ use Mix.Config
 config :blog, BlogWeb.Endpoint,
   http: [port: 8080],
   url: [host: "yetanotherblog.ru", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
-
-config :blog, Blog.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATA_DB_USER"),
-  password: System.get_env("DATA_DB_PASS"),
-  hostname: System.get_env("DATA_DB_HOST"),
-  database: "gonano",
-  pool_size: 10
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  code_reloader: false
 
 # Do not print debug messages in production
 config :logger, level: :info

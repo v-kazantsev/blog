@@ -21,11 +21,10 @@ defmodule BlogWeb.Router do
     post "/iriguchi", SessionController, :create
     get "/logout", SessionController, :delete
     resources "/blogs", BlogController#, except: [:index]
-    resources "/users", UserController, only: [:index, :show, :new, :create]
     get "/feedback", MailController, :new
     post "/feedback", MailController, :create
   end
-  
+
   # Other scopes may use custom stacks.
   # scope "/api", BlogWeb do
   #   pipe_through :api

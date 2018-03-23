@@ -51,10 +51,10 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :blog, Blog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATA_DB_USER"),
-  password: System.get_env("DATA_DB_PASS"),
-  hostname: System.get_env("DATA_DB_HOST"),
-  database: "gonano",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  database: "blog_dev",
   pool_size: 10
 
 config :blog, Blog.Mailer,

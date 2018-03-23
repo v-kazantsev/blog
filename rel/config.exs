@@ -30,13 +30,14 @@ environment :dev do
   # dev mode.
   set dev_mode: true
   set include_erts: false
-  set cookie: :"nugCDM~JHRC~y4cw69l{`>c0Dr;l466S17eb^v_$T]FgyCl{oO;3,C>~$;a]:RW!"
+  set cookie: :"G9/vU8@=&F4he41QVWBD[DOMcHme>dymqWObO(Le5j>]n=2bf;x17p|sbg}/`$AS"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"&vkTv9x2a)CvQRFre=VLE_l473yW0xy?!V]1}oKrgqc|0sukKg</jXC0pS(?H[9J"
+  set cookie: :"~Mq7Mngb)SI}Jb{f6=)QN4,5kDf$c6Ipn|&N5aJ5RSr|7VB*2u:<;Fk|{6vX*@H!"
+  set output_dir: "rel/blog"
 end
 
 # You may define one or more releases in this file.
@@ -50,4 +51,3 @@ release :blog do
     :runtime_tools
   ]
 end
-
