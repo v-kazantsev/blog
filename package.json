@@ -1,0 +1,25 @@
+{
+  "name": "yetanotherblog",
+  "version": "0.0.1",
+  "description": "blog",
+  "main": "brunch-config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-kazantsev/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v-kazantsev/blog/issues"
+  },
+  "homepage": "https://github.com/v-kazantsev/blog#readme"
+}
